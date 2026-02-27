@@ -72,7 +72,7 @@ api_base_urls:
 ### Step 1: 克隆仓库
 
 ```bash
-git clone <本仓库地址>
+git clone https://github.com/scpsyl/PaperBanana_Modified.git
 cd PaperBanana_Modified
 ```
 
@@ -103,7 +103,7 @@ cp configs/model_config.template.yaml configs/model_config.yaml
 
 ```yaml
 defaults:
-  model_name: "gemini-3.1-pro-preview"        # 文本模型（Planner/Critic 等）
+  model_name: "gemini-3.1-pro-preview"            # 文本模型（Planner/Critic 等）
   image_model_name: "gemini-3-pro-image-preview"  # 图像生成模型（Visualizer）
 
 api_keys:
