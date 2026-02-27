@@ -1,0 +1,8 @@
+configs/model_config.yaml
+configs/model_config_backup.yaml
+__pycache__/
+*.pyc
+.venv/
+data/
+results/
+tools/vtracer_converter/venv/

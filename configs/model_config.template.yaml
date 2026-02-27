@@ -1,0 +1,43 @@
+# Copyright 2026 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# Model and API Configuration for PaperVizAgent
+
+# Default Models
+defaults:
+  model_name: "" # e.g., "gemini-3-pro-preview", "claude-sonnet-4-20250514", "deepseek-chat", "gpt-4o"
+  image_model_name: "" # e.g., "gemini-3-pro-image-preview", "gpt-image-1"
+
+# Optional: force all text/image models to use a specific provider, ignoring model name auto-detection.
+# Auto-detection: model_name containing "gemini" → google, "claude" → anthropic, others → openai.
+# Set this to override, e.g. when your third-party OpenAI-compatible API serves models named "gemini-xxx".
+# Valid values: "google", "openai", "anthropic", or "" (auto-detect)
+provider_override:
+  text_model_provider: ""   # Override for text models (Planner, Retriever, Stylist, Critic, etc.)
+  image_model_provider: ""  # Override for image models (Visualizer diagram mode, Polish, etc.)
+
+# API Keys. If you are using all gemini models, you can leave the other keys empty.
+api_keys:
+  google_api_key: "" # e.g. "xxxxxxxxxxxxx"
+  openai_api_key: ""
+  anthropic_api_key: ""
+
+# Optional: custom API base URLs for third-party providers.
+# Leave empty to use the official endpoints.
+api_base_urls:
+  google_base_url: ""        # e.g. "https://your-gemini-proxy.com/v1"
+  google_api_version: ""     # API version appended after base_url. SDK default is "v1beta".
+                             # Set to "" if your proxy's base_url already includes the version path.
+  openai_base_url: ""        # e.g. "https://api.deepseek.com", "https://api.siliconflow.cn/v1"
+  anthropic_base_url: ""     # e.g. custom Anthropic-compatible endpoint
